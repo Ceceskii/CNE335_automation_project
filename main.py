@@ -1,5 +1,5 @@
 # Celine Watcharaapakorn-Smith
-# Automate_Ping
+# Automation Project
 # CNE 335
 
 from Server import Server
@@ -12,10 +12,14 @@ def print_program_info():
 if __name__ == '__main__':
     print_program_info()
     # TODO - Create a Server object
-    server_ip = "3.15.21.156"
+    server_ip = "3.144.108.187"
     rsa_key = r"C:\Users\celin\Downloads\Celine_Launch_and_Connect.ppk"
-    my_serv = Server(server_ip, rsa_key)
+    username = 'ubuntu'
+    # run upgrade and update command
+    upgrade = 'sudo apt update && sudo apt upgrade -y'
+    my_serv = Server(server_ip, rsa_key, username, upgrade)
     # TODO - Call Ping method and print the results
     print(my_serv.ping())
-    ssh_result = my_serv
+    print("Updating server...")
+    ssh_result = my_serv.upgrade
     print(ssh_result)

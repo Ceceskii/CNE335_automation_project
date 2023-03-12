@@ -12,7 +12,7 @@ def print_program_info():
 if __name__ == '__main__':
     print_program_info()
     # TODO - Create a Server object
-    server_ip = "3.138.106.53"
+    server_ip = "3.15.21.156"
     rsa_key = r"C:\Users\celin\Downloads\Celine_Launch_and_Connect.ppk"
     my_serv = Server(server_ip, rsa_key)
     # TODO - Call Ping method and print the results

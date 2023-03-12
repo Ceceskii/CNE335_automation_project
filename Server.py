@@ -23,7 +23,6 @@ class Server:
     def upgrade(self):
         # # https://blog.ruanbekker.com/blog/2018/04/23/using-paramiko-module-in-python-to-execute-remote-bash-commands/
         ssh = paramiko.SSHClient()
-        private_key = StringIO.StringIO(key_string)
         # https://stackoverflow.com/questions/9963391/how-do-use-paramiko-rsakey-from-private-key
         my_key = paramiko.RSAKey.from_private_key(self.rsa_key)
         ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
@@ -35,5 +34,6 @@ class Server:
         # Disconnect
         ssh.close()
 
+# need to double check pkey and my_key # not sure.
 
 
